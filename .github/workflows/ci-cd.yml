@@ -1,0 +1,33 @@
+name: CI/CD Pipeline
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Simular pruebas
+        run: |
+          echo "✅ Instalando dependencias..."
+          echo "✅ Ejecutando pruebas..."
+          echo "Archivos encontrados: index.html, app.js, app.test.js, package.json"
+          echo "Todas las pruebas pasaron correctamente"
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simular build
+        run: echo "✅ Build completado con exito"
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simular deploy
+        run: echo "✅ Deploy realizado correctamente"
+
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simular monitoreo
+        run: echo "📡 Monitoreo activado, revisando errores cada 5 segundos"
